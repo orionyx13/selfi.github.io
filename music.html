@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music — Aurelia Putri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { background: var(--brown); }
+
+    /* Page hero */
+    .music-page-hero {
+      padding: calc(var(--nav-h) + 72px) 0 72px;
+      text-align: center;
+      position: relative;
+    }
+
+    .music-page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 70% 20%, rgba(196,124,115,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 20% 90%, rgba(196,124,115,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .music-page-hero .section-eyebrow {
+      color: var(--rose-light);
+      justify-content: center;
+    }
+
+    .music-page-hero .section-eyebrow::before { background: var(--rose-light); }
+
+    .music-page-hero .section-title {
+      color: white;
+      font-size: clamp(40px, 5vw, 64px);
+    }
+
+    .music-page-hero .section-title em { color: var(--rose-light); }
+
+    .music-page-hero p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 12px;
+    }
+
+    /* Full layout */
+    .music-full-section {
+      padding: 0 0 100px;
+    }
+
+    .music-full-inner {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 56px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Sticky player on desktop */
+    .player-sticky-wrap {
+      position: sticky;
+      top: calc(var(--nav-h) + 24px);
+    }
+
+    /* Full playlist */
+    .full-playlist-wrap {
+      padding-top: 4px;
+    }
+
+    .full-playlist-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: white;
+      margin-bottom: 6px;
+      opacity: 0.9;
+    }
+
+    .full-playlist-count {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 20px;
+    }
+
+    .full-playlist-list { display: flex; flex-direction: column; gap: 2px; }
+
+    /* Search bar */
+    .playlist-search {
+      width: 100%;
+      padding: 11px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.06);
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      outline: none;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .playlist-search::placeholder { color: rgba(255,255,255,0.3); }
+    .playlist-search:focus { border-color: rgba(196,124,115,0.5); }
+
+    @media (max-width: 1024px) {
+      .music-full-inner { grid-template-columns: 1fr; }
+      .player-sticky-wrap { position: static; max-width: 440px; }
+    }
+
+    @media (max-width: 768px) {
+      #navbar { background: rgba(92,61,48,0.95); border-bottom-color: rgba(196,124,115,0.2); }
+      .nav-links a { color: rgba(255,255,255,0.6); }
+      .nav-links a:hover { color: var(--rose-light); }
+      .nav-logo { color: white; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar" style="background:rgba(92,61,48,0.95);border-bottom-color:rgba(196,124,115,0.2);">
+    <div class="nav-logo" style="color:white">
+      <a href="index.html" style="color:inherit;text-decoration:none">Aurelia <span style="color:var(--rose-light)">✦</span></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" style="color:rgba(255,255,255,0.6)">Home</a></li>
+      <li><a href="index.html#biodata" style="color:rgba(255,255,255,0.6)">Biodata</a></li>
+      <li><a href="gallery.html" style="color:rgba(255,255,255,0.6)">Gallery</a></li>
+      <li><a href="music.html" style="color:var(--rose-light)">Music</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" style="filter:invert(1)">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="music-page-hero">
+    <div class="container">
+      <p class="section-eyebrow">Now Playing</p>
+      <h1 class="section-title">My <em>Playlist</em></h1>
+      <p id="musicSubtitle">Semua lagu favorit dalam satu tempat</p>
+    </div>
+  </div>
+
+  <!-- MUSIC FULL -->
+  <section class="music-full-section">
+    <div class="container">
+      <div class="music-full-inner">
+
+        <!-- Sticky Player -->
+        <div class="player-sticky-wrap">
+          <div class="player-card">
+            <div class="player-top">
+              <div class="player-disc" id="playerDisc">
+                <div class="disc-inner">
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="white" opacity="0.7">
+                    <path d="M9 19V6l12-3v13M9 19c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12-3c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/>
+                  </svg>
+                </div>
+                <div class="disc-hole"></div>
+              </div>
+              <div class="player-meta">
+                <p class="player-song" id="playerSong">—</p>
+                <p class="player-artist" id="playerArtist">—</p>
+                <div class="player-wave" id="playerWave">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+            <div class="player-progress-wrap">
+              <div class="player-progress" id="playerProgress">
+                <div class="player-fill" id="playerFill"></div>
+                <div class="player-thumb" id="playerThumb"></div>
+              </div>
+              <div class="player-times"><span id="timeCur">0:00</span><span id="timeTot">0:00</span></div>
+            </div>
+            <div class="player-controls">
+              <button class="pc-btn" id="btnShuffle" onclick="toggleShuffle()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><polyline points="16 21 21 21 21 16"/><path d="M4 20L21 3"/><path d="M21 21L15.5 15.5M4 4l5.5 5.5"/></svg>
+              </button>
+              <button class="pc-btn" onclick="prevSong()">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+              </button>
+              <button class="pc-btn pc-play" onclick="togglePlay()">
+                <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <button class="pc-btn" onclick="nextSong()">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-12 5.5 6L8 18V6zm6-2h2v12h-2z"/></svg>
+              </button>
+              <button class="pc-btn" id="btnRepeat" onclick="toggleRepeat()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+              </button>
+            </div>
+            <div class="player-vol">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+              <input type="range" id="volSlider" min="0" max="100" value="80" class="vol-range" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Playlist -->
+        <div class="full-playlist-wrap">
+          <p class="full-playlist-heading">✦ Semua Lagu</p>
+          <p class="full-playlist-count" id="songCount"></p>
+          <input type="text" class="playlist-search" id="searchInput"
+                 placeholder="🔍  Cari judul atau artis..." />
+          <div class="full-playlist-list" id="playlistEl"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:rgba(0,0,0,0.3);border-top:1px solid rgba(255,255,255,0.05)">
+    <div class="footer-inner">
+      <p class="footer-name" style="color:rgba(255,255,255,0.5)">Aurelia Putri Santoso</p>
+      <p class="footer-copy">Made with ♡ · 2025</p>
+      <div class="footer-socials">
+        <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Pinterest</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="player.js"></script>
+  <script src="script.js"></script>
+  <script>
+    /* Init player dengan SEMUA lagu */
+    initPlayer(SONGS);
+
+    document.getElementById("songCount").textContent = SONGS.length + " lagu";
+
+    /* Search */
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const q = this.value.toLowerCase();
+      document.querySelectorAll(".pl-item").forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(q) ? "" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
