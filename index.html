@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurelia Putri — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">Aurelia <span>✦</span></div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#biodata">Biodata</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#music">Music</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-eyebrow">✦ Portfolio</p>
+        <h1 class="hero-name">Aurelia<br /><em>Putri Santoso</em></h1>
+        <p class="hero-role">Photographer · Content Creator · Visual Artist</p>
+        <p class="hero-desc">
+          Halo! Aku Aurelia — seorang content creator dan fotografer yang jatuh cinta 
+          dengan estetika dan momen-momen kecil yang bermakna. Setiap gambar adalah 
+          sebuah perasaan yang ingin aku abadikan.
+        </p>
+        <div class="hero-btns">
+          <a href="#gallery" class="btn-primary">Lihat Gallery</a>
+          <a href="#biodata" class="btn-ghost">Tentang Aku</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-blob-wrap">
+          <!-- Ganti src dengan link Imgur kamu -->
+          <img
+            src="https://i.imgur.com/placeholder.jpg"
+            alt="Aurelia Putri"
+            class="hero-photo"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="hero-photo-fallback">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span>Your Photo</span>
+          </div>
+        </div>
+        <div class="hero-ring hero-ring--outer"></div>
+        <div class="hero-ring hero-ring--inner"></div>
+        <div class="hero-badge">
+          <span class="hero-badge-num">24</span>
+          <span class="hero-badge-txt">Projects</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- BIODATA -->
+  <section id="biodata">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">About Me</p>
+        <h2 class="section-title">Siapa <em>Aku</em></h2>
+      </div>
+
+      <div class="bio-layout">
+        <div class="bio-desc">
+          <p>
+            Nama lengkapku <strong>Aurelia Putri Santoso</strong>, tapi teman-teman biasa 
+            panggilku Aure. Aku tumbuh besar di Yogyakarta, dikelilingi seni dan alam yang 
+            akhirnya membentuk cara pandangku — selalu mencari keindahan di balik hal-hal sederhana.
+          </p>
+          <p>
+            Perjalananku sebagai content creator dimulai dari hobi fotografi sejak SMA. Kini aku 
+            aktif menciptakan konten visual yang berfokus pada gaya hidup, fashion, dan traveling.
+          </p>
+          <p>
+            Di luar dunia kamera, aku sangat mencintai musik. Playlist-ku bisa berubah dari lo-fi 
+            jazz ke indie pop dalam hitungan menit — tergantung suasana hati ✨
+          </p>
+          <div class="bio-tags">
+            <span>📸 Fotografi</span>
+            <span>✍️ Menulis</span>
+            <span>🌏 Traveling</span>
+            <span>🎵 Musik</span>
+          </div>
+        </div>
+
+        <div class="bio-card">
+          <div class="bio-card-header">Data Diri</div>
+          <div class="bio-rows">
+            <div class="bio-row">
+              <span class="bio-key">Nama Lengkap</span>
+              <span class="bio-val">Aurelia Putri Santoso</span>
+            </div>
+            <div class="bio-row">
+              <span class="bio-key">Panggilan</span>
+              <span class="bio-val">Aure / Lia</span>
+            </div>
+            <div class="bio-row">
+              <span class="bio-key">Tanggal Lahir</span>
+              <span class="bio-val">14 Februari 2001</span>
+            </div>
+            <div class="bio-row">
+              <span class="bio-key">Tempat Lahir</span>
+              <span class="bio-val">Yogyakarta, Indonesia</span>
+            </div>
+            <div class="bio-row">
+              <span class="bio-key">Zodiak</span>
+              <span class="bio-val">Aquarius ♒</span>
+            </div>
+            <div class="bio-row">
+              <span class="bio-key">Pendidikan</span>
+              <span class="bio-val">S1 Desain Komunikasi Visual</span>
+            </div>
+            <div class="bio-row">
+              <span class="bio-key">Hobi</span>
+              <span class="bio-val">Fotografi, Menulis, Traveling</span>
+            </div>
+            <div class="bio-row">
+              <span class="bio-key">Fav Genre</span>
+              <span class="bio-val">Indie Pop · Lo-fi · Jazz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header gallery-header-row">
+        <div>
+          <p class="section-eyebrow">Visual Stories</p>
+          <h2 class="section-title">My <em>Gallery</em></h2>
+        </div>
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="foto">Foto</button>
+          <button class="filter-btn" data-filter="travel">Travel</button>
+          <button class="filter-btn" data-filter="daily">Daily</button>
+        </div>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- 
+          Cara isi foto dari Imgur:
+          1. Upload foto ke imgur.com
+          2. Klik foto → kanan klik → "Copy image address"
+          3. Tempel di src=""
+          Contoh: src="https://i.imgur.com/AbCdEfG.jpg"
+        -->
+        <div class="g-item g-wide" data-cat="foto">
+          <img src="https://i.imgur.com/placeholder1.jpg" alt="Portrait" onerror="this.parentNode.classList.add('no-img')" />
+          <div class="g-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Portrait Session</span></div>
+          <div class="g-overlay"><span>Golden Hour Portrait</span></div>
+        </div>
+        <div class="g-item" data-cat="daily">
+          <img src="https://i.imgur.com/placeholder2.jpg" alt="Daily" onerror="this.parentNode.classList.add('no-img')" />
+          <div class="g-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3"/><path d="M3 9a1 1 0 0 1 .9-.55h1.1a1 1 0 0 0 .83-.45L7 6.55A1 1 0 0 1 7.83 6h8.34a1 1 0 0 1 .83.45l1.17 1.45a1 1 0 0 0 .83.45H20a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9z"/></svg><span>Daily Moments</span></div>
+          <div class="g-overlay"><span>Morning Ritual</span></div>
+        </div>
+        <div class="g-item" data-cat="travel">
+          <img src="https://i.imgur.com/placeholder3.jpg" alt="Travel" onerror="this.parentNode.classList.add('no-img')" />
+          <div class="g-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Travel Diaries</span></div>
+          <div class="g-overlay"><span>Yogyakarta Sundown</span></div>
+        </div>
+        <div class="g-item" data-cat="foto">
+          <img src="https://i.imgur.com/placeholder4.jpg" alt="Film" onerror="this.parentNode.classList.add('no-img')" />
+          <div class="g-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Film Photography</span></div>
+          <div class="g-overlay"><span>Film Analog</span></div>
+        </div>
+        <div class="g-item g-wide" data-cat="travel">
+          <img src="https://i.imgur.com/placeholder5.jpg" alt="Bali" onerror="this.parentNode.classList.add('no-img')" />
+          <div class="g-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>Explore the World</span></div>
+          <div class="g-overlay"><span>Bali Pagi Hari</span></div>
+        </div>
+        <div class="g-item" data-cat="daily">
+          <img src="https://i.imgur.com/placeholder6.jpg" alt="Joy" onerror="this.parentNode.classList.add('no-img')" />
+          <div class="g-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Moments of Joy</span></div>
+          <div class="g-overlay"><span>With Love</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC -->
+  <section id="music">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Now Playing</p>
+        <h2 class="section-title">My <em>Playlist</em></h2>
+      </div>
+
+      <div class="music-layout">
+        <div class="player-card">
+          <div class="player-top">
+            <div class="player-disc" id="playerDisc">
+              <div class="disc-inner">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="white" opacity="0.7">
+                  <path d="M9 19V6l12-3v13M9 19c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12-3c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/>
+                </svg>
+              </div>
+              <div class="disc-hole"></div>
+            </div>
+            <div class="player-meta">
+              <p class="player-song" id="playerSong">Satu Dalam Sejuta</p>
+              <p class="player-artist" id="playerArtist">Aurelie Hermansyah</p>
+              <div class="player-wave" id="playerWave">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="player-progress-wrap">
+            <div class="player-progress" id="playerProgress">
+              <div class="player-fill" id="playerFill"></div>
+              <div class="player-thumb" id="playerThumb"></div>
+            </div>
+            <div class="player-times">
+              <span id="timeCur">0:00</span>
+              <span id="timeTot">3:42</span>
+            </div>
+          </div>
+
+          <div class="player-controls">
+            <button class="pc-btn" id="btnShuffle" title="Shuffle" onclick="toggleShuffle()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 3 21 3 21 8"/><polyline points="16 21 21 21 21 16"/>
+                <path d="M4 20L21 3"/><path d="M21 21L15.5 15.5M4 4l5.5 5.5"/>
+              </svg>
+            </button>
+            <button class="pc-btn" onclick="prevSong()">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+            </button>
+            <button class="pc-btn pc-play" id="btnPlay" onclick="togglePlay()">
+              <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <button class="pc-btn" onclick="nextSong()">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-12 5.5 6L8 18V6zm6-2h2v12h-2z"/></svg>
+            </button>
+            <button class="pc-btn" id="btnRepeat" title="Repeat" onclick="toggleRepeat()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="player-vol">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            </svg>
+            <input type="range" id="volSlider" min="0" max="100" value="80" class="vol-range" />
+          </div>
+        </div>
+
+        <div class="playlist-wrap">
+          <p class="playlist-heading">✦ Favorite Songs</p>
+          <div class="playlist-list" id="playlistEl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">Aurelia Putri Santoso</p>
+      <p class="footer-copy">Made with ♡ · 2025</p>
+      <div class="footer-socials">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Pinterest</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
