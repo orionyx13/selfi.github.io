@@ -68,13 +68,109 @@ const PHOTOS = [
     cat:     "travel"
   },
   {
-    src:     "https://i.imgur.com/GANTI12.jpg",
-    caption: "Matcha Latte",
+    src:     "https://i.imgur.com/vHGrkYc.jpeg",
+    caption: "Me",
     cat:     "daily"
   },
   {
-    src:     "https://i.imgur.com/GANTI13.jpg",
-    caption: "Analog #2",
+    src:     "https://i.imgur.com/VIA2Q9W.jpeg",
+    caption: "Me",
+    cat:     "foto"
+  },
+   
+  {
+    src:     "https://i.imgur.com/H7rSOXQ.jpeg",
+    caption: "Me",
+    cat:     "travel"
+  },
+  {
+    src:     "https://i.imgur.com/I0hKQQQ.jpeg",
+    caption: "Me",
+    cat:     "daily"
+  },
+  {
+    src:     "https://i.imgur.com/iVJLxAV.jpeg",
+    caption: "Me",
+    cat:     "foto"
+  },
+   
+  {
+    src:     "https://i.imgur.com/5AsZX7j.jpeg",
+    caption: "Me",
+    cat:     "travel"
+  },
+  {
+    src:     "https://i.imgur.com/3sQo0fE.jpeg",
+    caption: "Me",
+    cat:     "daily"
+  },
+  {
+    src:     "https://i.imgur.com/DPjk6WO.jpeg",
+    caption: "Me",
+    cat:     "foto"
+  },
+   
+  {
+    src:     "https://i.imgur.com/3ft28MZ.jpeg",
+    caption: "Me & Moms",
+    cat:     "travel"
+  },
+  {
+    src:     "https://i.imgur.com/tlq4glO.jpeg",
+    caption: "Me",
+    cat:     "daily"
+  },
+  {
+    src:     "https://i.imgur.com/F8GnnVC.jpeg",
+    caption: "Me & Cats",
+    cat:     "foto"
+  },
+   
+  {
+    src:     "https://i.imgur.com/EQve6lp.jpeg",
+    caption: "Me",
+    cat:     "travel"
+  },
+  {
+    src:     "https://i.imgur.com/kxnRNEV.jpeg",
+    caption: "Me",
+    cat:     "daily"
+  },
+  {
+    src:     "https://i.imgur.com/qOCcDmo.jpeg",
+    caption: "Me",
+    cat:     "foto"
+  },
+   
+  {
+    src:     "https://i.imgur.com/fxl89rW.jpeg",
+    caption: "Me & Friend",
+    cat:     "travel"
+  },
+  {
+    src:     "https://i.imgur.com/eubBTHi.jpeg",
+    caption: "Me",
+    cat:     "daily"
+  },
+  {
+    src:     "https://i.imgur.com/CKap8KN.jpeg",
+    caption: "Me",
+    cat:     "foto"
+  },
+   
+  {
+    src:     "https://i.imgur.com/o0YSxGr.jpeg",
+    caption: "Me",
+    cat:     "travel"
+  },
+  {
+    src:     "https://i.imgur.com/pzMs926.jpeg",
+    caption: "Me",
+    cat:     "daily"
+  },
+  {
+    src:     "https://i.imgur.com/8s5OOJE.jpeg",
+    caption: "Me",
     cat:     "foto"
   },
 ];
