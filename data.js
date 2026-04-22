@@ -12,59 +12,59 @@
 
 const PHOTOS = [
   {
-    src:     "https://i.imgur.com/GANTI1.jpg",
-    caption: "Golden Hour Portrait",
+    src:     "https://i.imgur.com/1UrF77M.jpeg",
+    caption: "Me",
     cat:     "foto"
   },
   {
-    src:     "https://i.imgur.com/GANTI2.jpg",
-    caption: "Morning Ritual",
+    src:     "https://i.imgur.com/jUNk6Hz.jpeg",
+    caption: "Me",
     cat:     "daily"
   },
   {
-    src:     "https://i.imgur.com/GANTI3.jpg",
-    caption: "Yogyakarta Sundown",
+    src:     "https://i.imgur.com/AhW9fJ9.jpeg",
+    caption: "Me & Friend",
     cat:     "travel"
   },
   {
-    src:     "https://i.imgur.com/GANTI4.jpg",
-    caption: "Film Analog",
+    src:     "https://i.imgur.com/45U6DUw.jpeg",
+    caption: "Me",
     cat:     "foto"
   },
   {
-    src:     "https://i.imgur.com/GANTI5.jpg",
-    caption: "Bali Pagi Hari",
+    src:     "https://i.imgur.com/tivxTrH.jpeg",
+    caption: "Me & Friend",
     cat:     "travel"
   },
   {
-    src:     "https://i.imgur.com/GANTI6.jpg",
-    caption: "With Love",
+    src:     "https://i.imgur.com/HrNBrev.jpeg",
+    caption: "Me",
     cat:     "daily"
   },
   {
-    src:     "https://i.imgur.com/GANTI7.jpg",
-    caption: "Café Corner",
+    src:     "https://i.imgur.com/42Ugv17.jpeg",
+    caption: "Me",
     cat:     "daily"
   },
   {
-    src:     "https://i.imgur.com/GANTI8.jpg",
-    caption: "Prambanan Senja",
+    src:     "https://i.imgur.com/TAnxnxA.jpeg",
+    caption: "Me",
     cat:     "travel"
   },
   {
-    src:     "https://i.imgur.com/GANTI9.jpg",
-    caption: "Street Style",
+    src:     "https://i.imgur.com/J6M3NFf.jpeg",
+    caption: "Me",
     cat:     "foto"
   },
   {
-    src:     "https://i.imgur.com/GANTI10.jpg",
-    caption: "Bunga di Taman",
+    src:     "https://i.imgur.com/RowshPg.jpeg",
+    caption: "Me",
     cat:     "daily"
   },
   /* ── Foto berikutnya (hanya tampil di gallery.html) ── */
   {
-    src:     "https://i.imgur.com/GANTI11.jpg",
-    caption: "Pantai Sore",
+    src:     "https://i.imgur.com/0pjMz0K.jpeg",
+    caption: "Me",
     cat:     "travel"
   },
   {
