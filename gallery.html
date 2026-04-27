@@ -4,60 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery — Selfi Anggraeni</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Page-specific styles */
     .page-hero {
       padding: calc(var(--nav-h) + 64px) 0 64px;
       background: linear-gradient(135deg, var(--rose-pale) 0%, var(--cream) 60%);
       text-align: center;
     }
-
-    .page-hero .section-eyebrow {
-      justify-content: center;
-    }
-
+    .page-hero .section-eyebrow { justify-content: center; }
     .page-hero .section-eyebrow::before { display: none; }
-
-    .page-hero .section-title { font-size: clamp(40px, 5vw, 64px); }
-
-    .page-hero p {
-      font-size: 15px;
-      color: var(--text-muted);
-      margin-top: 12px;
-    }
-
-    .gallery-page-filters {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 40px 0 0;
-    }
-
-    .gallery-full-section {
-      padding: 64px 0 100px;
-      background: var(--cream);
-    }
-
-    .gallery-count {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 28px;
-      text-align: right;
-    }
-
-    /* Active nav link */
-    .nav-links a.nav-active {
-      color: var(--rose);
-    }
-    .nav-links a.nav-active::after {
-      width: 100%;
-    }
-
+    .gallery-full-section { padding: 64px 0 100px; background: var(--cream); }
+    .gallery-count { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; text-align: right; }
+    .nav-links a.nav-active { color: var(--rose); }
+    .nav-links a.nav-active::after { width: 100%; }
+    
     /* Lightbox */
     .lightbox {
       display: none;
@@ -70,78 +30,19 @@
       backdrop-filter: blur(8px);
       padding: 24px;
     }
-
     .lightbox.open { display: flex; }
-
-    .lightbox-inner {
-      position: relative;
-      max-width: 900px;
-      width: 100%;
-    }
-
-    .lightbox-img {
-      width: 100%;
-      max-height: 80vh;
-      object-fit: contain;
-      border-radius: 12px;
-      display: block;
-    }
-
-    .lightbox-caption {
-      text-align: center;
-      margin-top: 16px;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 18px;
-      color: rgba(255,255,255,0.7);
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: -48px;
-      right: 0;
-      background: none;
-      border: none;
-      color: rgba(255,255,255,0.7);
-      font-size: 28px;
-      cursor: pointer;
-      transition: color 0.2s;
-      line-height: 1;
-    }
-
-    .lightbox-close:hover { color: white; }
-
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.12);
-      border: none;
-      color: white;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-
-    .lightbox-nav:hover { background: rgba(255,255,255,0.22); }
+    .lightbox-inner { position: relative; max-width: 900px; width: 100%; }
+    .lightbox-img { width: 100%; max-height: 80vh; object-fit: contain; border-radius: 12px; }
+    .lightbox-caption { text-align: center; margin-top: 16px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: rgba(255,255,255,0.7); }
+    .lightbox-close { position: absolute; top: -48px; right: 0; background: none; border: none; color: rgba(255,255,255,0.7); font-size: 28px; cursor: pointer; }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.12); border: none; color: white; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; }
     .lightbox-nav.prev { left: -60px; }
     .lightbox-nav.next { right: -60px; }
-
-    @media (max-width: 768px) {
-      .lightbox-nav.prev { left: 0; }
-      .lightbox-nav.next { right: 0; }
-    }
+    @media (max-width: 768px) { .lightbox-nav.prev { left: 0; } .lightbox-nav.next { right: 0; } }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR — sudah sesuai dengan Selfi -->
   <nav id="navbar">
     <div class="nav-logo"><a href="index.html" style="color:inherit;text-decoration:none">fiiselfii <span>✦</span></a></div>
     <ul class="nav-links">
@@ -153,22 +54,16 @@
     <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- PAGE HERO -->
   <div class="page-hero">
     <div class="container">
       <p class="section-eyebrow">Visual Stories</p>
       <h1 class="section-title">My <em>Gallery</em></h1>
       <p>Semua momen yang ingin aku abadikan</p>
-      <div class="gallery-page-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="daily">Daily</button>
-        <button class="filter-btn" data-filter="travel">Travel</button>
-        <button class="filter-btn" data-filter="portrait">Potrait</button>
-      </div>
+      <!-- FILTER TINGGAL ALL — tersembunyi atau cukup 1 tombol -->
+      <div class="gallery-page-filters" style="display: none;"></div>
     </div>
   </div>
 
-  <!-- GALLERY FULL -->
   <section class="gallery-full-section">
     <div class="container">
       <p class="gallery-count" id="galleryCount"></p>
@@ -176,7 +71,6 @@
     </div>
   </section>
 
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox-inner">
       <button class="lightbox-close" id="lightboxClose">✕</button>
@@ -187,41 +81,33 @@
     </div>
   </div>
 
-  <!-- FOOTER — sudah sesuai Selfi -->
   <footer>
     <div class="footer-inner">
       <p class="footer-name">Selfi Anggraeni</p>
       <p class="footer-copy">Made with ♡ · 2026</p>
       <div class="footer-socials">
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
-        <a href="#">WhatsApp</a>
+        <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">WhatsApp</a>
       </div>
     </div>
   </footer>
 
   <script src="data.js"></script>
   <script>
-    /* Pastikan PHOTOS tersedia dari data.js */
-    const galleryFull  = document.getElementById("galleryFull");
+    const galleryFull = document.getElementById("galleryFull");
     const galleryCount = document.getElementById("galleryCount");
-    let visiblePhotos  = typeof PHOTOS !== 'undefined' ? [...PHOTOS] : [];
-    let lightboxIdx    = 0;
+    let semuaFoto = typeof PHOTOS !== 'undefined' ? [...PHOTOS] : [];
+    let lightboxIdx = 0;
 
-    /* ── Build gallery grid — TANPA WIDE (semua potrait) ── */
     function buildGallery(photos) {
       if (!galleryFull) return;
       galleryFull.innerHTML = "";
-      galleryCount.textContent = photos.length + " foto";
+      if (galleryCount) galleryCount.textContent = photos.length + " foto";
 
       photos.forEach((p, idx) => {
         const div = document.createElement("div");
-        div.className = "g-item";  // ← hapus g-wide, semua foto potrait
-        div.dataset.cat = p.cat;
-        div.dataset.idx = idx;
+        div.className = "g-item";
         div.innerHTML = `
-          <img src="${p.src}" alt="${p.caption}"
-               onerror="this.parentNode.classList.add('no-img')" />
+          <img src="${p.src}" alt="${p.caption}" style="width:100%; height:100%; object-fit:cover;" onerror="this.parentNode.classList.add('no-img')" />
           <div class="g-placeholder">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="36" height="36">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -231,29 +117,11 @@
             <span>${p.caption}</span>
           </div>
           <div class="g-overlay"><span>${p.caption}</span></div>`;
-
         div.addEventListener("click", () => openLightbox(idx, photos));
         galleryFull.appendChild(div);
       });
     }
 
-    /* ── Filter fungsi ── */
-    const filterBtns = document.querySelectorAll(".filter-btn");
-    if (filterBtns.length) {
-      filterBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-          filterBtns.forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-          const cat = btn.dataset.filter;
-          if (typeof PHOTOS !== 'undefined') {
-            visiblePhotos = cat === "all" ? [...PHOTOS] : PHOTOS.filter(p => p.cat === cat);
-            buildGallery(visiblePhotos);
-          }
-        });
-      });
-    }
-
-    /* ── Lightbox functions ── */
     function openLightbox(idx, photos) {
       lightboxIdx = idx;
       const lb = document.getElementById("lightbox");
@@ -269,65 +137,39 @@
       if (capEl) capEl.textContent = p.caption;
     }
 
-    const closeBtn = document.getElementById("lightboxClose");
-    const prevBtn = document.getElementById("lightboxPrev");
-    const nextBtn = document.getElementById("lightboxNext");
-    const lightboxEl = document.getElementById("lightbox");
-
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        if (lightboxEl) lightboxEl.classList.remove("open");
-      });
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        lightboxIdx = (lightboxIdx - 1 + visiblePhotos.length) % visiblePhotos.length;
-        updateLightbox(visiblePhotos);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        lightboxIdx = (lightboxIdx + 1) % visiblePhotos.length;
-        updateLightbox(visiblePhotos);
-      });
-    }
-
-    if (lightboxEl) {
-      lightboxEl.addEventListener("click", (e) => {
-        if (e.target === lightboxEl) lightboxEl.classList.remove("open");
-      });
-    }
-
+    document.getElementById("lightboxClose")?.addEventListener("click", () => {
+      document.getElementById("lightbox")?.classList.remove("open");
+    });
+    document.getElementById("lightboxPrev")?.addEventListener("click", () => {
+      lightboxIdx = (lightboxIdx - 1 + semuaFoto.length) % semuaFoto.length;
+      updateLightbox(semuaFoto);
+    });
+    document.getElementById("lightboxNext")?.addEventListener("click", () => {
+      lightboxIdx = (lightboxIdx + 1) % semuaFoto.length;
+      updateLightbox(semuaFoto);
+    });
+    document.getElementById("lightbox")?.addEventListener("click", (e) => {
+      if (e.target === document.getElementById("lightbox")) document.getElementById("lightbox")?.classList.remove("open");
+    });
     document.addEventListener("keydown", (e) => {
-      if (!lightboxEl || !lightboxEl.classList.contains("open")) return;
-      if (e.key === "Escape") lightboxEl.classList.remove("open");
-      if (e.key === "ArrowLeft") {
-        lightboxIdx = (lightboxIdx - 1 + visiblePhotos.length) % visiblePhotos.length;
-        updateLightbox(visiblePhotos);
-      }
-      if (e.key === "ArrowRight") {
-        lightboxIdx = (lightboxIdx + 1) % visiblePhotos.length;
-        updateLightbox(visiblePhotos);
-      }
+      const lb = document.getElementById("lightbox");
+      if (!lb || !lb.classList.contains("open")) return;
+      if (e.key === "Escape") lb.classList.remove("open");
+      if (e.key === "ArrowLeft") { lightboxIdx = (lightboxIdx - 1 + semuaFoto.length) % semuaFoto.length; updateLightbox(semuaFoto); }
+      if (e.key === "ArrowRight") { lightboxIdx = (lightboxIdx + 1) % semuaFoto.length; updateLightbox(semuaFoto); }
     });
 
-    /* Init jika PHOTOS ada */
-    if (typeof PHOTOS !== 'undefined' && PHOTOS.length) {
-      buildGallery(PHOTOS);
+    if (semuaFoto.length) {
+      buildGallery(semuaFoto);
     } else {
       if (galleryCount) galleryCount.textContent = "0 foto";
-      if (galleryFull) galleryFull.innerHTML = "<p style='text-align:center; color:var(--text-muted);'>Belum ada foto. Tambahkan data di data.js</p>";
+      if (galleryFull) galleryFull.innerHTML = "<p style='text-align:center;'>Belum ada foto.</p>";
     }
 
-    /* Nav Burger (opsional, sesuai style.css) */
     const burger = document.getElementById("navBurger");
     const navLinks = document.querySelector(".nav-links");
     if (burger && navLinks) {
-      burger.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-      });
+      burger.addEventListener("click", () => navLinks.classList.toggle("open"));
     }
   </script>
 </body>
