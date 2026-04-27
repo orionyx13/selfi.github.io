@@ -92,6 +92,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav-links a:hover { color: var(--rose); }
 .nav-links a:hover::after { width: 100%; }
 
+/* Active nav link */
+.nav-links a.nav-active {
+  color: var(--rose);
+}
+.nav-links a.nav-active::after {
+  width: 100%;
+}
+
 .nav-burger {
   display: none;
   flex-direction: column;
@@ -563,8 +571,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* HAPUS EFEK WIDE — gak ada lagi landscape */
 .g-item.g-wide {
-  grid-column: span 1;  /* ← span 2 diubah jadi span 1 */
-  aspect-ratio: 3 / 4;  /* ← paksa potrait */
+  grid-column: span 1;
+  aspect-ratio: 3 / 4;
 }
 
 .g-item:hover {
@@ -1021,7 +1029,9 @@ footer {
 
 .footer-socials a:hover { color: var(--rose-light); }
 
-/* Responsive umum */
+/* =========================================
+   RESPONSIVE UMUM
+   ========================================= */
 @media (max-width: 1000px) {
   .hero-content {
     grid-template-columns: 1fr;
@@ -1054,6 +1064,7 @@ footer {
     gap: 32px;
     transition: left 0.3s ease;
     box-shadow: 4px 0 20px rgba(0,0,0,0.05);
+    z-index: 199;
   }
   .nav-links.open { left: 0; }
   .nav-burger { display: flex; }
