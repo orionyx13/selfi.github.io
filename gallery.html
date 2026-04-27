@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery — Aurelia Putri</title>
+  <title>Gallery — Selfi Anggraeni</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
@@ -48,6 +48,14 @@
       color: var(--text-muted);
       margin-bottom: 28px;
       text-align: right;
+    }
+
+    /* Active nav link */
+    .nav-links a.nav-active {
+      color: var(--rose);
+    }
+    .nav-links a.nav-active::after {
+      width: 100%;
     }
 
     /* Lightbox */
@@ -133,9 +141,9 @@
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAVBAR — sudah sesuai dengan Selfi -->
   <nav id="navbar">
-    <div class="nav-logo"><a href="index.html" style="color:inherit;text-decoration:none">Aurelia <span>✦</span></a></div>
+    <div class="nav-logo"><a href="index.html" style="color:inherit;text-decoration:none">fiiselfii <span>✦</span></a></div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#biodata">Biodata</a></li>
@@ -150,12 +158,12 @@
     <div class="container">
       <p class="section-eyebrow">Visual Stories</p>
       <h1 class="section-title">My <em>Gallery</em></h1>
-      <p id="gallerySubtitle">Semua momen yang ingin aku abadikan</p>
+      <p>Semua momen yang ingin aku abadikan</p>
       <div class="gallery-page-filters">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="foto">Foto</button>
-        <button class="filter-btn" data-filter="travel">Travel</button>
         <button class="filter-btn" data-filter="daily">Daily</button>
+        <button class="filter-btn" data-filter="travel">Travel</button>
+        <button class="filter-btn" data-filter="portrait">Potrait</button>
       </div>
     </div>
   </div>
@@ -179,36 +187,38 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER — sudah sesuai Selfi -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-name">Aurelia Putri Santoso</p>
-      <p class="footer-copy">Made with ♡ · 2025</p>
+      <p class="footer-name">Selfi Anggraeni</p>
+      <p class="footer-copy">Made with ♡ · 2026</p>
       <div class="footer-socials">
-        <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Pinterest</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">WhatsApp</a>
       </div>
     </div>
   </footer>
 
   <script src="data.js"></script>
-  <script src="script.js"></script>
   <script>
+    /* Pastikan PHOTOS tersedia dari data.js */
     const galleryFull  = document.getElementById("galleryFull");
     const galleryCount = document.getElementById("galleryCount");
-    let visiblePhotos  = [...PHOTOS];
+    let visiblePhotos  = typeof PHOTOS !== 'undefined' ? [...PHOTOS] : [];
     let lightboxIdx    = 0;
 
-    /* ── Build gallery grid ── */
+    /* ── Build gallery grid — TANPA WIDE (semua potrait) ── */
     function buildGallery(photos) {
+      if (!galleryFull) return;
       galleryFull.innerHTML = "";
       galleryCount.textContent = photos.length + " foto";
 
-      photos.forEach((p, i) => {
-        const isWide = i % 5 === 0;   // setiap item ke-0 dari grup 5 jadi wide
+      photos.forEach((p, idx) => {
         const div = document.createElement("div");
-        div.className = "g-item" + (isWide ? " g-wide" : "");
+        div.className = "g-item";  // ← hapus g-wide, semua foto potrait
         div.dataset.cat = p.cat;
-        div.dataset.idx = i;
+        div.dataset.idx = idx;
         div.innerHTML = `
           <img src="${p.src}" alt="${p.caption}"
                onerror="this.parentNode.classList.add('no-img')" />
@@ -222,65 +232,103 @@
           </div>
           <div class="g-overlay"><span>${p.caption}</span></div>`;
 
-        div.addEventListener("click", () => openLightbox(i, photos));
+        div.addEventListener("click", () => openLightbox(idx, photos));
         galleryFull.appendChild(div);
       });
     }
 
-    /* ── Filter ── */
-    document.querySelectorAll(".filter-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        const cat = btn.dataset.filter;
-        visiblePhotos = cat === "all" ? [...PHOTOS] : PHOTOS.filter(p => p.cat === cat);
-        buildGallery(visiblePhotos);
+    /* ── Filter fungsi ── */
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    if (filterBtns.length) {
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const cat = btn.dataset.filter;
+          if (typeof PHOTOS !== 'undefined') {
+            visiblePhotos = cat === "all" ? [...PHOTOS] : PHOTOS.filter(p => p.cat === cat);
+            buildGallery(visiblePhotos);
+          }
+        });
       });
-    });
+    }
 
-    /* ── Lightbox ── */
+    /* ── Lightbox functions ── */
     function openLightbox(idx, photos) {
       lightboxIdx = idx;
       const lb = document.getElementById("lightbox");
-      lb.classList.add("open");
+      if (lb) lb.classList.add("open");
       updateLightbox(photos);
     }
 
     function updateLightbox(photos) {
       const p = photos[lightboxIdx];
-      document.getElementById("lightboxImg").src       = p.src;
-      document.getElementById("lightboxCaption").textContent = p.caption;
+      const imgEl = document.getElementById("lightboxImg");
+      const capEl = document.getElementById("lightboxCaption");
+      if (imgEl) imgEl.src = p.src;
+      if (capEl) capEl.textContent = p.caption;
     }
 
-    document.getElementById("lightboxClose").addEventListener("click", () => {
-      document.getElementById("lightbox").classList.remove("open");
-    });
+    const closeBtn = document.getElementById("lightboxClose");
+    const prevBtn = document.getElementById("lightboxPrev");
+    const nextBtn = document.getElementById("lightboxNext");
+    const lightboxEl = document.getElementById("lightbox");
 
-    document.getElementById("lightboxPrev").addEventListener("click", () => {
-      lightboxIdx = (lightboxIdx - 1 + visiblePhotos.length) % visiblePhotos.length;
-      updateLightbox(visiblePhotos);
-    });
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        if (lightboxEl) lightboxEl.classList.remove("open");
+      });
+    }
 
-    document.getElementById("lightboxNext").addEventListener("click", () => {
-      lightboxIdx = (lightboxIdx + 1) % visiblePhotos.length;
-      updateLightbox(visiblePhotos);
-    });
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        lightboxIdx = (lightboxIdx - 1 + visiblePhotos.length) % visiblePhotos.length;
+        updateLightbox(visiblePhotos);
+      });
+    }
 
-    document.getElementById("lightbox").addEventListener("click", (e) => {
-      if (e.target === document.getElementById("lightbox"))
-        document.getElementById("lightbox").classList.remove("open");
-    });
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        lightboxIdx = (lightboxIdx + 1) % visiblePhotos.length;
+        updateLightbox(visiblePhotos);
+      });
+    }
+
+    if (lightboxEl) {
+      lightboxEl.addEventListener("click", (e) => {
+        if (e.target === lightboxEl) lightboxEl.classList.remove("open");
+      });
+    }
 
     document.addEventListener("keydown", (e) => {
-      const lb = document.getElementById("lightbox");
-      if (!lb.classList.contains("open")) return;
-      if (e.key === "Escape") lb.classList.remove("open");
-      if (e.key === "ArrowLeft") { lightboxIdx = (lightboxIdx - 1 + visiblePhotos.length) % visiblePhotos.length; updateLightbox(visiblePhotos); }
-      if (e.key === "ArrowRight") { lightboxIdx = (lightboxIdx + 1) % visiblePhotos.length; updateLightbox(visiblePhotos); }
+      if (!lightboxEl || !lightboxEl.classList.contains("open")) return;
+      if (e.key === "Escape") lightboxEl.classList.remove("open");
+      if (e.key === "ArrowLeft") {
+        lightboxIdx = (lightboxIdx - 1 + visiblePhotos.length) % visiblePhotos.length;
+        updateLightbox(visiblePhotos);
+      }
+      if (e.key === "ArrowRight") {
+        lightboxIdx = (lightboxIdx + 1) % visiblePhotos.length;
+        updateLightbox(visiblePhotos);
+      }
     });
 
-    /* Init */
-    buildGallery(PHOTOS);
+    /* Init jika PHOTOS ada */
+    if (typeof PHOTOS !== 'undefined' && PHOTOS.length) {
+      buildGallery(PHOTOS);
+    } else {
+      if (galleryCount) galleryCount.textContent = "0 foto";
+      if (galleryFull) galleryFull.innerHTML = "<p style='text-align:center; color:var(--text-muted);'>Belum ada foto. Tambahkan data di data.js</p>";
+    }
+
+    /* Nav Burger (opsional, sesuai style.css) */
+    const burger = document.getElementById("navBurger");
+    const navLinks = document.querySelector(".nav-links");
+    if (burger && navLinks) {
+      burger.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+    }
   </script>
 </body>
 </html>
