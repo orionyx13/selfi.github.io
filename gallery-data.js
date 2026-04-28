@@ -163,7 +163,41 @@ const PHOTOS = [
     caption: "Me",
     type:    "photo"
   },
-
+  {
+    src:     "https://i.imgur.com/IcMpeF2.png",
+    caption: "Me",
+    type:    "photo"
+  },   
+  {
+    src:     "https://i.imgur.com/8RDY0g1.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },   
+  {
+    src:     "https://i.imgur.com/LnxsM7N.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/h2oYR8a.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/bvODJVp.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },    
+  {
+    src:     "https://i.imgur.com/Nz3bDxn.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/4C7jbwS.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
     src:     "https://www.youtube.com/embed/dQw4w9WgXcQ",
