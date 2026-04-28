@@ -197,7 +197,67 @@ const PHOTOS = [
     src:     "https://i.imgur.com/4C7jbwS.jpeg",
     caption: "Me",
     type:    "photo"
-  },
+  },      
+  {
+    src:     "https://i.imgur.com/ACCMVSC.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/3gImz5m.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/a8PoFB9.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/jFsz612.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/bo0dkzI.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/MszQaM7.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/3o43nAw.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/nslm6sY.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/qTLitnM.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/F3NbjNA.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/CTDSYzg.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/8lA1l5s.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
     src:     "https://www.youtube.com/embed/dQw4w9WgXcQ",
