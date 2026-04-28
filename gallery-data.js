@@ -260,13 +260,13 @@ const PHOTOS = [
   },     
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
-    src:     "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    caption: "Video Liburan",
+    src:     "https://i.imgur.com/YRzhYIE.mp4",
+    caption: "My Story",
     type:    "video"
   },
   {
-    src:     "https://www.youtube.com/embed/VIDEO_ID_2",
-    caption: "Behind The Scene",
+    src:     "https://i.imgur.com/hjPyPlG.mp4",
+    caption: "My Story",
     type:    "video"
   }
 ];
