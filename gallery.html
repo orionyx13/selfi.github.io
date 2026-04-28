@@ -9,46 +9,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Page-specific styles */
     .page-hero {
       padding: calc(var(--nav-h) + 64px) 0 64px;
       background: linear-gradient(135deg, var(--rose-pale) 0%, var(--cream) 60%);
       text-align: center;
     }
-
-    .page-hero .section-eyebrow {
-      justify-content: center;
-    }
-
+    .page-hero .section-eyebrow { justify-content: center; }
     .page-hero .section-eyebrow::before { display: none; }
-
     .page-hero .section-title { font-size: clamp(40px, 5vw, 64px); }
+    .page-hero p { font-size: 15px; color: var(--text-muted); margin-top: 12px; }
 
-    .page-hero p {
-      font-size: 15px;
-      color: var(--text-muted);
-      margin-top: 12px;
+    .gallery-full-section { padding: 64px 0 100px; background: var(--cream); }
+    .gallery-count { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; text-align: right; }
+
+    /* Filter buttons */
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 32px 0 40px;
     }
-
-    .gallery-full-section {
-      padding: 64px 0 100px;
-      background: var(--cream);
-    }
-
-    .gallery-count {
+    .filter-btn {
+      padding: 8px 28px;
+      border: 1.5px solid var(--rose-light);
+      border-radius: 40px;
       font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 28px;
-      text-align: right;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--brown-mid);
+      background: transparent;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: white;
     }
 
-    /* Active nav link */
-    .nav-links a.nav-active {
-      color: var(--rose);
-    }
-    .nav-links a.nav-active::after {
+    /* Video item */
+    .g-item iframe {
       width: 100%;
+      height: 100%;
+      border: none;
+      pointer-events: none;
     }
+    .g-item:hover iframe {
+      pointer-events: auto;
+    }
+
+    .nav-links a.nav-active { color: var(--rose); }
+    .nav-links a.nav-active::after { width: 100%; }
 
     /* Lightbox */
     .lightbox {
@@ -62,78 +74,20 @@
       backdrop-filter: blur(8px);
       padding: 24px;
     }
-
     .lightbox.open { display: flex; }
-
-    .lightbox-inner {
-      position: relative;
-      max-width: 900px;
-      width: 100%;
-    }
-
-    .lightbox-img {
-      width: 100%;
-      max-height: 80vh;
-      object-fit: contain;
-      border-radius: 12px;
-      display: block;
-    }
-
-    .lightbox-caption {
-      text-align: center;
-      margin-top: 16px;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 18px;
-      color: rgba(255,255,255,0.7);
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: -48px;
-      right: 0;
-      background: none;
-      border: none;
-      color: rgba(255,255,255,0.7);
-      font-size: 28px;
-      cursor: pointer;
-      transition: color 0.2s;
-      line-height: 1;
-    }
-
-    .lightbox-close:hover { color: white; }
-
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.12);
-      border: none;
-      color: white;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-
-    .lightbox-nav:hover { background: rgba(255,255,255,0.22); }
+    .lightbox-inner { position: relative; max-width: 900px; width: 100%; }
+    .lightbox-img { width: 100%; max-height: 80vh; object-fit: contain; border-radius: 12px; }
+    .lightbox-video { width: 100%; height: 500px; border: none; border-radius: 12px; }
+    .lightbox-caption { text-align: center; margin-top: 16px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: rgba(255,255,255,0.7); }
+    .lightbox-close { position: absolute; top: -48px; right: 0; background: none; border: none; color: rgba(255,255,255,0.7); font-size: 28px; cursor: pointer; }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.12); border: none; color: white; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; }
     .lightbox-nav.prev { left: -60px; }
     .lightbox-nav.next { right: -60px; }
-
-    @media (max-width: 768px) {
-      .lightbox-nav.prev { left: 0; }
-      .lightbox-nav.next { right: 0; }
-    }
+    @media (max-width: 768px) { .lightbox-nav.prev { left: 0; } .lightbox-nav.next { right: 0; } }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav id="navbar">
     <div class="nav-logo"><a href="index.html" style="color:inherit;text-decoration:none">fiiselfii <span>✦</span></a></div>
     <ul class="nav-links">
@@ -145,17 +99,23 @@
     <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- PAGE HERO — TANPA FILTER -->
   <div class="page-hero">
     <div class="container">
       <p class="section-eyebrow">Visual Stories</p>
       <h1 class="section-title">My <em>Gallery</em></h1>
-      <p>Semua momen yang ingin aku abadikan</p>
-      <!-- FILTER DIHAPUS TOTAL -->
+      <p>Foto & video momen yang ingin aku abadikan</p>
     </div>
   </div>
 
-  <!-- GALLERY FULL -->
+  <!-- FILTER FOTO & VIDEO -->
+  <div class="container">
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="photo">Photo</button>
+      <button class="filter-btn" data-filter="video">Video</button>
+    </div>
+  </div>
+
   <section class="gallery-full-section">
     <div class="container">
       <p class="gallery-count" id="galleryCount"></p>
@@ -168,89 +128,118 @@
     <div class="lightbox-inner">
       <button class="lightbox-close" id="lightboxClose">✕</button>
       <button class="lightbox-nav prev" id="lightboxPrev">‹</button>
-      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+      <div id="lightboxMedia"></div>
       <button class="lightbox-nav next" id="lightboxNext">›</button>
       <p class="lightbox-caption" id="lightboxCaption"></p>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <p class="footer-name">Selfi Anggraeni</p>
-      <p class="footer-copy">Made with Noctyra · 2026</p>
+      <p class="footer-copy">Made with ♡ · 2026</p>
       <div class="footer-socials">
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
-        <a href="#">WhatsApp</a>
+        <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">WhatsApp</a>
       </div>
     </div>
   </footer>
 
-  <!-- SCRIPT — PAKAI gallery-data.js SAJA -->
   <script src="gallery-data.js"></script>
   <script>
     const galleryFull = document.getElementById("galleryFull");
     const galleryCount = document.getElementById("galleryCount");
-    let semuaFoto = typeof PHOTOS !== 'undefined' ? [...PHOTOS] : [];
+    let semuaItem = typeof PHOTOS !== 'undefined' ? [...PHOTOS] : [];
+    let filteredItems = [...semuaItem];
     let lightboxIdx = 0;
+    let currentFilter = "all";
 
-    /* ── Build gallery — SEMUA POTRAIT, TANPA WIDE ── */
-    function buildGallery(photos) {
+    function buildGallery(items) {
       if (!galleryFull) return;
       galleryFull.innerHTML = "";
-      if (galleryCount) galleryCount.textContent = photos.length + " foto";
+      if (galleryCount) galleryCount.textContent = items.length + " item";
 
-      photos.forEach((p, idx) => {
+      items.forEach((item, idx) => {
         const div = document.createElement("div");
         div.className = "g-item";
-        div.innerHTML = `
-          <img src="${p.src}" alt="${p.caption}" 
-               style="width:100%; height:100%; object-fit:cover;" 
-               onerror="this.parentNode.classList.add('no-img')" />
-          <div class="g-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="36" height="36">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <path d="M21 15l-5-5L5 21"/>
-            </svg>
-            <span>${p.caption}</span>
-          </div>
-          <div class="g-overlay"><span>${p.caption}</span></div>`;
-        div.addEventListener("click", () => openLightbox(idx, photos));
+        div.dataset.type = item.type;
+        
+        if (item.type === "video") {
+          div.innerHTML = `
+            <iframe src="${item.src}" frameborder="0" allowfullscreen style="width:100%; height:100%; object-fit:cover;"></iframe>
+            <div class="g-overlay"><span>🎬 ${item.caption}</span></div>`;
+        } else {
+          div.innerHTML = `
+            <img src="${item.src}" alt="${item.caption}" style="width:100%; height:100%; object-fit:cover;" onerror="this.parentNode.classList.add('no-img')" />
+            <div class="g-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="36" height="36">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+              <span>${item.caption}</span>
+            </div>
+            <div class="g-overlay"><span>${item.caption}</span></div>`;
+        }
+        
+        div.addEventListener("click", () => openLightbox(idx, items));
         galleryFull.appendChild(div);
       });
     }
 
-    /* ── LIGHTBOX FUNCTIONS ── */
-    function openLightbox(idx, photos) {
+    function filterItems() {
+      if (currentFilter === "all") {
+        filteredItems = [...semuaItem];
+      } else {
+        filteredItems = semuaItem.filter(item => item.type === currentFilter);
+      }
+      buildGallery(filteredItems);
+    }
+
+    // Filter buttons
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentFilter = btn.dataset.filter;
+        filterItems();
+      });
+    });
+
+    // Lightbox functions
+    function openLightbox(idx, items) {
       lightboxIdx = idx;
       const lb = document.getElementById("lightbox");
       if (lb) lb.classList.add("open");
-      updateLightbox(photos);
+      updateLightbox(items);
     }
 
-    function updateLightbox(photos) {
-      const p = photos[lightboxIdx];
-      const imgEl = document.getElementById("lightboxImg");
+    function updateLightbox(items) {
+      const item = items[lightboxIdx];
+      const mediaContainer = document.getElementById("lightboxMedia");
       const capEl = document.getElementById("lightboxCaption");
-      if (imgEl) imgEl.src = p.src;
-      if (capEl) capEl.textContent = p.caption;
+      
+      if (!mediaContainer) return;
+      
+      if (item.type === "video") {
+        mediaContainer.innerHTML = `<iframe class="lightbox-video" src="${item.src}" frameborder="0" allowfullscreen></iframe>`;
+      } else {
+        mediaContainer.innerHTML = `<img class="lightbox-img" src="${item.src}" alt="${item.caption}" />`;
+      }
+      if (capEl) capEl.textContent = item.caption;
     }
 
-    /* ── EVENT LISTENERS ── */
     document.getElementById("lightboxClose")?.addEventListener("click", () => {
       document.getElementById("lightbox")?.classList.remove("open");
     });
 
     document.getElementById("lightboxPrev")?.addEventListener("click", () => {
-      lightboxIdx = (lightboxIdx - 1 + semuaFoto.length) % semuaFoto.length;
-      updateLightbox(semuaFoto);
+      lightboxIdx = (lightboxIdx - 1 + filteredItems.length) % filteredItems.length;
+      updateLightbox(filteredItems);
     });
 
     document.getElementById("lightboxNext")?.addEventListener("click", () => {
-      lightboxIdx = (lightboxIdx + 1) % semuaFoto.length;
-      updateLightbox(semuaFoto);
+      lightboxIdx = (lightboxIdx + 1) % filteredItems.length;
+      updateLightbox(filteredItems);
     });
 
     document.getElementById("lightbox")?.addEventListener("click", (e) => {
@@ -264,24 +253,22 @@
       if (!lb || !lb.classList.contains("open")) return;
       if (e.key === "Escape") lb.classList.remove("open");
       if (e.key === "ArrowLeft") {
-        lightboxIdx = (lightboxIdx - 1 + semuaFoto.length) % semuaFoto.length;
-        updateLightbox(semuaFoto);
+        lightboxIdx = (lightboxIdx - 1 + filteredItems.length) % filteredItems.length;
+        updateLightbox(filteredItems);
       }
       if (e.key === "ArrowRight") {
-        lightboxIdx = (lightboxIdx + 1) % semuaFoto.length;
-        updateLightbox(semuaFoto);
+        lightboxIdx = (lightboxIdx + 1) % filteredItems.length;
+        updateLightbox(filteredItems);
       }
     });
 
-    /* ── INIT ── */
-    if (semuaFoto.length) {
-      buildGallery(semuaFoto);
+    if (semuaItem.length) {
+      buildGallery(semuaItem);
     } else {
-      if (galleryCount) galleryCount.textContent = "0 foto";
-      if (galleryFull) galleryFull.innerHTML = "<p style='text-align:center; color:var(--text-muted); padding:60px;'>Belum ada foto. Tambahkan data di gallery-data.js</p>";
+      if (galleryCount) galleryCount.textContent = "0 item";
+      if (galleryFull) galleryFull.innerHTML = "<p style='text-align:center; color:var(--text-muted); padding:60px;'>Belum ada konten. Tambahkan data di gallery-data.js</p>";
     }
 
-    /* ── NAV BURGER ── */
     const burger = document.getElementById("navBurger");
     const navLinks = document.querySelector(".nav-links");
     if (burger && navLinks) {
