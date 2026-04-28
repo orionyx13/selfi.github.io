@@ -9,6 +9,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* Sticky footer untuk gallery.html */
+    html, body {
+      min-height: 100vh;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-full-section {
+      flex: 1;
+    }
+    footer {
+      margin-top: auto;
+    }
+
     .page-hero {
       padding: calc(var(--nav-h) + 64px) 0 64px;
       background: linear-gradient(135deg, var(--rose-pale) 0%, var(--cream) 60%);
@@ -139,7 +154,9 @@
       <p class="footer-name">Selfi Anggraeni</p>
       <p class="footer-copy">Made with ♡ · 2026</p>
       <div class="footer-socials">
-        <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">WhatsApp</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">WhatsApp</a>
       </div>
     </div>
   </footer>
