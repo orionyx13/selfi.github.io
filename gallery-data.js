@@ -260,12 +260,12 @@ const PHOTOS = [
   },     
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
-    src:     "https://raw.githubusercontent.com/orionyx13/selfi.github.io/main/video/AllVideo_01769641128658.mp4",
+    src:     "https://res.cloudinary.com/deqjuasvw/video/upload/v1777374520/AllVideo_01772723176184_s01ucs.mp4",
     caption: "My Story",
     type:    "video"
   },
   {
-    src:     "https://i.imgur.com/hjPyPlG.mp4",
+    src:     "https://res.cloudinary.com/deqjuasvw/video/upload/v1777374898/AllVideo_01769641128658_pfelwy.mp4",
     caption: "My Story",
     type:    "video"
   }
