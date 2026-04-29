@@ -11,7 +11,7 @@ const SONGS = [
     title:  "Jangan Paksakan Rindu",
     artist: "Ifan Seventeen",
     dur:    "4:05",
-    src:    "https://drive.google.com/uc?export=download&id=1Mlc6tDMafrVIZyjs9jPshAzotygXu1vY"
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777468936/Ifan_Seventeen_-_Jangan_Paksa_Rindu_Beda___Official_Lyric_Video_h4j8un.mp4"
   },
   {
     title:  "Rasa Yang Tertinggal",
