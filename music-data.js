@@ -8,22 +8,22 @@
 
 const SONGS = [
   {
-    title:  "Jangan Paksakan Rindu",
+    title:  "Jangan Paksakan Rindu - Beda",
     artist: "Ifan Seventeen",
     dur:    "4:05",
     src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777468936/Ifan_Seventeen_-_Jangan_Paksa_Rindu_Beda___Official_Lyric_Video_h4j8un.mp4"
   },
   {
-    title:  "Rasa Yang Tertinggal",
-    artist: "Yura Yunita",
-    dur:    "4:01",
-    src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/rasa-yang-tertinggal.mp3"
+    title:  "Ada Titik-Titik Di Ujung Doa",
+    artist: "Sal Priadi",
+    dur:    "5:07",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777469808/Ada_Titik-Titik_Di_Ujung_Doa_s0dje3.mp4"
   },
   {
-    title:  "Diam-Diam Suka",
-    artist: "RAN",
-    dur:    "3:55",
-    src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/diam-diam-suka.mp3"
+    title:  "Bahagia Lagi",
+    artist: "Piche Kota",
+    dur:    "3:48",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777470218/Bahagia_Lagi_k8cath.mp4"
   },
   {
     title:  "Yellow",
@@ -47,7 +47,7 @@ const SONGS = [
     title:  "Kangen",
     artist: "Dewa 19",
     dur:    "4:12",
-    src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/kangen.mp3"
+    src:    "https://raw.githubusercontent.com/USERNAME/REPO/maisic/kangen.mp3"
   },
   {
     title:  "Hati-Hati di Jalan",
@@ -55,7 +55,7 @@ const SONGS = [
     dur:    "3:58",
     src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/hati-hati-di-jalan.mp3"
   },
-  {
+  
     title:  "Pesan Terakhir",
     artist: "Yura Yunita",
     dur:    "4:10",
