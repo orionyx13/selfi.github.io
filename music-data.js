@@ -8,10 +8,10 @@
 
 const SONGS = [
   {
-    title:  "Satu Dalam Sejuta",
-    artist: "Aurelie Hermansyah",
-    dur:    "3:42",
-    src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/satu-dalam-sejuta.mp3"
+    title:  "Jangan Paksakan Rindu",
+    artist: "Ifan Seventeen",
+    dur:    "4:05",
+    src:    "https://drive.google.com/uc?export=download&id=1Mlc6tDMafrVIZyjs9jPshAzotygXu1vY"
   },
   {
     title:  "Rasa Yang Tertinggal",
