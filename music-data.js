@@ -26,10 +26,10 @@ const SONGS = [
     src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777470218/Bahagia_Lagi_k8cath.mp4"
   },
   {
-    title:  "Yellow",
-    artist: "Coldplay",
-    dur:    "4:26",
-    src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/yellow.mp3"
+    title:  "Sedia Aku Sebelum Hujan",
+    artist: "idgitaf",
+    dur:    "3:50",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777471152/Sedia_Aku_Sebelum_Hujan_b5s6xa.mp3"
   },
   {
     title:  "Lover",
@@ -55,36 +55,6 @@ const SONGS = [
     dur:    "3:58",
     src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/hati-hati-di-jalan.mp3"
   },
-  
-    title:  "Pesan Terakhir",
-    artist: "Yura Yunita",
-    dur:    "4:10",
-    src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/pesan-terakhir.mp3"
-  },
-  {
-    title:  "Bunga",
-    artist: "Raisa",
-    dur:    "3:45",
-    src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/bunga.mp3"
-  },
-  {
-    title:  "Superhero",
-    artist: "Isyana Sarasvati",
-    dur:    "3:33",
-    src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/superhero.mp3"
-  },
-  {
-    title:  "Grow As We Go",
-    artist: "Ben Platt",
-    dur:    "3:36",
-    src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/grow-as-we-go.mp3"
-  },
-  {
-    title:  "Someone Like You",
-    artist: "Adele",
-    dur:    "4:45",
-    src:    "https://raw.githubusercontent.com/USERNAME/REPO/main/music/someone-like-you.mp3"
-  }
 ];
 
 // Untuk preview di index.html (jumlah lagu yang ditampilkan)
