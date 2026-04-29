@@ -26,7 +26,14 @@ const SONGS = [
     artist: "idgitaf",
     dur:    "3:50",
     src:    "https://res.cloudinary.com/deqjuasvw/audio/upload/v1777471152/Sedia_Aku_Sebelum_Hujan_b5s6xa.mp3"
-  }
+  },
+   {
+    title:  "Everything U Are",
+    artist: "Hindia",
+    dur:    "3:56",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777471710/Everything_U_Are_acseee.mp3"
+  },
+   
 ];
 
 // Untuk preview di index.html (jumlah lagu yang ditampilkan)
