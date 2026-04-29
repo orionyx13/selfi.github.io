@@ -39,6 +39,18 @@ const SONGS = [
     dur:    "3:27",
     src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777471981/Bersenja_Gurau_iqyp5z.mp3"
   },
+   {
+    title:  "Iqro'",
+    artist: "Raim Laode",
+    dur:    "3:55",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777472297/Iqro_firxr7.mp3"
+  },
+   {
+    title:  "Tarot",
+    artist: ".Feast",
+    dur:    "4:49",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777472574/Tarot_vdaxqf.mp3"
+  },
 ];
 
 // Untuk preview di index.html (jumlah lagu yang ditampilkan)
