@@ -25,7 +25,7 @@ const SONGS = [
     title:  "Sedia Aku Sebelum Hujan",
     artist: "idgitaf",
     dur:    "3:50",
-    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777471152/Sedia_Aku_Sebelum_Hujan_b5s6xa.mp3"
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777472908/Sedia_Aku_Sebelum_Hujan_ekfe6g.mp3"
   },
    {
     title:  "Everything U Are",
