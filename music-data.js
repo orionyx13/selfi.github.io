@@ -33,7 +33,12 @@ const SONGS = [
     dur:    "3:56",
     src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777471710/Everything_U_Are_acseee.mp3"
   },
-   
+   {
+    title:  "Bersenja Gurau",
+    artist: "Raim Laode",
+    dur:    "3:27",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777471981/Bersenja_Gurau_iqyp5z.mp3"
+  },
 ];
 
 // Untuk preview di index.html (jumlah lagu yang ditampilkan)
