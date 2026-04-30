@@ -70,10 +70,22 @@ const SONGS = [
     src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777530354/Bergema_Sampai_selamanya_a9ptdl.mp3"
   },
    {
+    title:  "Monokrom",
+    artist: "Tulus",
+    dur:    "3:39",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777545040/Monokrom_oqguel.mp4"
+  },
+   {
     title:  "Cincin",
     artist: "Hindia",
     dur:    "4:26",
     src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777530827/Cincin_mvnqse.mp3"
+  },
+   {
+    title:  "Monolog",
+    artist: "Pamungkas",
+    dur:    "3:21",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777545043/Monolog_rynuhu.mp4"
   },
 ];
 
