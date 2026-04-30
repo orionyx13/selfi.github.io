@@ -57,6 +57,24 @@ const SONGS = [
     dur:    "4:32",
     src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777529857/Kota_Ini_Tak_Sama_Tanpamu_xxqnaw.mp3"
   },
+   {
+    title:  "Rumah Ke Rumah",
+    artist: "Hindia",
+    dur:    "4:37",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777530092/Rumah_ke_Rumah_sh7kvh.mp3"
+  },
+   {
+    title:  "Bergema Sampai Selamanya",
+    artist: "Nadhif Basalamah",
+    dur:    "3:18",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777530354/Bergema_Sampai_selamanya_a9ptdl.mp3"
+  },
+   {
+    title:  "Cincin",
+    artist: "Hindia",
+    dur:    "4:26",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777530827/Cincin_mvnqse.mp3"
+  },
 ];
 
 // Untuk preview di index.html (jumlah lagu yang ditampilkan)
