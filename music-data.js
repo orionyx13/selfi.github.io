@@ -51,6 +51,12 @@ const SONGS = [
     dur:    "4:49",
     src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777472574/Tarot_vdaxqf.mp3"
   },
+   {
+    title:  "Kota Ini Tak Sama Tanpamu",
+    artist: "Nadhif Basalamah",
+    dur:    "4:32",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777529857/Kota_Ini_Tak_Sama_Tanpamu_xxqnaw.mp3"
+  },
 ];
 
 // Untuk preview di index.html (jumlah lagu yang ditampilkan)
