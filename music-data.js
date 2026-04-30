@@ -93,6 +93,12 @@ const SONGS = [
     dur:    "4:27",
     src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777545864/Sempurna_gppiav.mp4"
   },
+   {
+    title:  "Nina",
+    artist: ".Feast",
+    dur:    "4:39",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777546647/Nina_luuzw9.mp4"
+  },
 ];
 
 // Untuk preview di index.html (jumlah lagu yang ditampilkan)
