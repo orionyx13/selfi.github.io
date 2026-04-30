@@ -87,6 +87,12 @@ const SONGS = [
     dur:    "3:21",
     src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777545043/Monolog_rynuhu.mp4"
   },
+   {
+    title:  "Sempurna",
+    artist: "Andra And The Backbone",
+    dur:    "4:27",
+    src:    "https://res.cloudinary.com/deqjuasvw/video/upload/v1777545864/Sempurna_gppiav.mp4"
+  },
 ];
 
 // Untuk preview di index.html (jumlah lagu yang ditampilkan)
