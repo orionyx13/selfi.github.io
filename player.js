@@ -1,6 +1,6 @@
 /* =========================================
    player.js — Shared music player logic
-   FIXED: Google Drive support, autoplay, error handling
+   CLOUDINARY VERSION — No Google Drive fix
    ========================================= */
 
 let _songs      = [];
@@ -15,8 +15,9 @@ let _isUserInteracted = false;
 function _enableAudioOnUserInteraction() {
   if (_isUserInteracted) return;
   _isUserInteracted = true;
-  if (_audio && _audio.paused && _songs.length > 0) {
-    _audio.play().catch(e => console.log("Autoplay still blocked:", e));
+  console.log("User interacted, audio can now play");
+  if (_audio && _audio.paused && _audio.src && _isPlaying) {
+    _audio.play().catch(e => console.log("Play blocked:", e));
   }
 }
 
@@ -27,16 +28,17 @@ function initPlayer(songs) {
   }
   
   _songs = songs;
+  _currentIdx = 0;
+  _isPlaying = false;
+  
   _loadSong(0, false);
 
-  /* Volume slider */
   const vol = document.getElementById("volSlider");
   if (vol) {
     _audio.volume = vol.value / 100;
     vol.addEventListener("input", () => { _audio.volume = vol.value / 100; });
   }
 
-  /* Progress bar seek */
   const bar = document.getElementById("playerProgress");
   if (bar) {
     bar.addEventListener("click", (e) => {
@@ -48,7 +50,6 @@ function initPlayer(songs) {
     });
   }
 
-  /* Audio events */
   _audio.addEventListener("timeupdate", _onTimeUpdate);
   _audio.addEventListener("ended", () => { 
     if (_isRepeat) {
@@ -64,31 +65,12 @@ function initPlayer(songs) {
     _setText("playerArtist", "Check file link");
   });
 
-  /* Enable audio on first user click anywhere */
   document.body.addEventListener("click", _enableAudioOnUserInteraction);
   document.body.addEventListener("touchstart", _enableAudioOnUserInteraction);
   
   _buildPlaylist();
 }
 
-/* Fix Google Drive URL */
-function _fixDriveUrl(url) {
-  if (!url) return url;
-  // Convert Google Drive share link to direct download
-  if (url.includes("drive.google.com") && url.includes("/view")) {
-    const match = url.match(/\/d\/(.+?)\//);
-    if (match && match[1]) {
-      return `https://drive.google.com/uc?export=download&id=${match[1]}`;
-    }
-  }
-  // Already direct link? Make sure it has download param
-  if (url.includes("drive.google.com") && url.includes("uc?export=download")) {
-    return url;
-  }
-  return url;
-}
-
-/* Load song */
 function _loadSong(idx, autoplay) {
   if (!_songs || !_songs[idx]) {
     console.error("Song not found at index:", idx);
@@ -97,9 +79,7 @@ function _loadSong(idx, autoplay) {
   
   _currentIdx = idx;
   const s = _songs[idx];
-  let songUrl = _fixDriveUrl(s.src);
-
-  _audio.src = songUrl;
+  _audio.src = s.src;  // ← LANGSUNG PAKAI src, tanpa modifikasi
   _audio.volume = (document.getElementById("volSlider")?.value ?? 80) / 100;
   _audio.load();
 
@@ -119,8 +99,9 @@ function _loadSong(idx, autoplay) {
   }
 }
 
-/* Play / Pause internal */
 function _playAudio() {
+  if (!_audio.src) return;
+  
   _audio.play().then(() => {
     _isPlaying = true;
     _setPlayIcon(true);
@@ -143,11 +124,10 @@ function _pauseAudio() {
   _buildPlaylist();
 }
 
-/* Public controls */
 function togglePlay() {
   _enableAudioOnUserInteraction();
   if (!_audio.src) {
-    if (_songs.length) _loadSong(0, true);
+    if (_songs.length) _loadSong(_currentIdx, true);
     return;
   }
   _isPlaying ? _pauseAudio() : _playAudio();
@@ -156,7 +136,7 @@ function togglePlay() {
 function prevSong() {
   if (!_songs.length) return;
   const idx = (_currentIdx - 1 + _songs.length) % _songs.length;
-  _loadSong(idx, _isPlaying);
+  _loadSong(idx, false);
 }
 
 function nextSong() {
@@ -168,10 +148,9 @@ function nextSong() {
   } else {
     idx = (_currentIdx + 1) % _songs.length;
   }
-  _loadSong(idx, _isPlaying);
+  _loadSong(idx, false);
 }
 
-/* Shuffle / Repeat */
 function toggleShuffle() {
   _isShuffle = !_isShuffle;
   _el("btnShuffle")?.classList.toggle("active", _isShuffle);
@@ -183,7 +162,6 @@ function toggleRepeat() {
   _el("btnRepeat")?.classList.toggle("active", _isRepeat);
 }
 
-/* Time update */
 function _onTimeUpdate() {
   if (!_audio.duration || !isFinite(_audio.duration)) return;
   const pct = (_audio.currentTime / _audio.duration) * 100;
@@ -192,11 +170,15 @@ function _onTimeUpdate() {
   _setText("timeCur", _fmtTime(_audio.currentTime));
 }
 
-/* Build playlist UI */
 function _buildPlaylist() {
   const container = _el("playlistEl");
   if (!container) return;
   container.innerHTML = "";
+
+  if (!_songs || _songs.length === 0) {
+    container.innerHTML = "<div style='color:rgba(255,255,255,0.5); padding:20px; text-align:center;'>No songs loaded</div>";
+    return;
+  }
 
   _songs.forEach((s, i) => {
     const div = document.createElement("div");
@@ -214,11 +196,10 @@ function _buildPlaylist() {
   });
 }
 
-/* Helpers */
-function _el(id)             { return document.getElementById(id); }
-function _setText(id, val)   { const e = _el(id); if (e) e.textContent = val; }
-function _setWidth(id, val)  { const e = _el(id); if (e) e.style.width = val; }
-function _setLeft(id, val)   { const e = _el(id); if (e) e.style.left = val; }
+function _el(id) { return document.getElementById(id); }
+function _setText(id, val) { const e = _el(id); if (e) e.textContent = val; }
+function _setWidth(id, val) { const e = _el(id); if (e) e.style.width = val; }
+function _setLeft(id, val) { const e = _el(id); if (e) e.style.left = val; }
 
 function _setPlayIcon(playing) {
   const icon = _el("playIcon");
@@ -233,4 +214,4 @@ function _fmtTime(sec) {
   const m = Math.floor(sec / 60);
   const s = Math.floor(sec % 60);
   return m + ":" + String(s).padStart(2, "0");
-  }
+                                      }
