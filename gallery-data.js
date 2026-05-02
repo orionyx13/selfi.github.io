@@ -295,6 +295,11 @@ const PHOTOS = [
     caption: "My Story",
     type:    "video"
   }
+  {
+    src:     "https://res.cloudinary.com/deqjuasvw/video/upload/v1777708048/AllVideo_01777707690045_qr0qn7.mp4",
+    caption: "My Story",
+    type:    "video"
+       }
 ];
 
 // Preview di index.html (jumlah yang ditampilkan)
