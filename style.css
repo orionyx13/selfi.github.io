@@ -1,6 +1,7 @@
 /* =========================================
    PORTFOLIO — style.css (FULLY FIXED)
    Hero: teks kiri, foto kanan (2 kolom)
+   + Birthday mode styles (12 Juli)
    ========================================= */
 
 /* ─── RESET & BASE ─── */
@@ -1055,3 +1056,95 @@ footer {
     gap: 24px;
   }
 }
+
+/* =========================================
+   BIRTHDAY MODE — Aktif saat kelas .birthday-mode ada di <body>
+   (dikontrol oleh birthday.js)
+   ========================================= */
+
+/* Badge berkedip warna emas */
+body.birthday-mode .hero-badge {
+  animation: birthdayGlow 0.8s ease-in-out infinite alternate !important;
+  background: linear-gradient(135deg, var(--rose), #ffb347) !important;
+}
+
+body.birthday-mode .hero-badge-num {
+  font-size: 32px;
+}
+
+body.birthday-mode .hero-badge-txt {
+  letter-spacing: 0.2em;
+  font-weight: bold;
+}
+
+@keyframes birthdayGlow {
+  from { box-shadow: 0 0 5px #ffd700, 0 0 10px var(--rose-light); }
+  to   { box-shadow: 0 0 25px #ffd700, 0 0 35px var(--rose); }
+}
+
+/* Efek teks hero role melompat */
+body.birthday-mode .hero-role {
+  animation: birthdayTextPop 0.5s ease-out;
+  color: #ffd700 !important;
+  font-weight: 500;
+}
+
+@keyframes birthdayTextPop {
+  0%   { transform: scale(1); opacity: 0.8; }
+  50%  { transform: scale(1.1); text-shadow: 0 0 8px #ffd700; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Efek nama sedikit bergetar bahagia */
+body.birthday-mode .hero-name em {
+  display: inline-block;
+  animation: happyShake 0.4s ease-in-out 2;
+}
+
+@keyframes happyShake {
+  0% { transform: translate(1px, -1px) rotate(0deg); }
+  25% { transform: translate(-1px, 2px) rotate(1deg); }
+  50% { transform: translate(-2px, 0px) rotate(-1deg); }
+  75% { transform: translate(1px, 1px) rotate(0deg); }
+  100% { transform: translate(0,0) rotate(0); }
+}
+
+/* Balon dekorasi (akan dibuat oleh JS, kita siapkan animasi) */
+.birthday-balloon {
+  position: absolute;
+  bottom: -100px;
+  pointer-events: none;
+  z-index: 10;
+  animation: balloonFloat 8s ease-in-out forwards;
+}
+
+@keyframes balloonFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(15deg);
+    opacity: 0;
+    display: none;
+  }
+}
+
+/* Confetti/emoji jatuh (dari birthday.js) */
+@keyframes birthdayFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+    display: none;
+  }
+   }
