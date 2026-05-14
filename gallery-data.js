@@ -383,6 +383,91 @@ const PHOTOS = [
     src:     "https://i.imgur.com/6r1mN3u.jpeg",
     caption: "Me",
     type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/4ab7aoR.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/w3wQyE7.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/YnfCn4R.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/GbH3T4i.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/14CnA66.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/rNKu9vH.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/u3qUSol.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/DQqY2hr.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/wK8yvv1.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/uLNbGO4.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/uhsXCnH.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/0v58dXd.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/ZSgd1dD.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/iS1unT9.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/ncut1ut.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/ghoXauX.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/eulMm3p.jpeg",
+    caption: "Me",
+    type:    "photo"
   },
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
