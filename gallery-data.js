@@ -448,7 +448,17 @@ const PHOTOS = [
     src:     "https://i.imgur.com/ZSgd1dD.jpeg",
     caption: "Me",
     type:    "photo"
-  },     
+  },        
+  {
+    src:     "https://i.imgur.com/sauCpvr.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/mMtCusj.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },
   {
     src:     "https://i.imgur.com/iS1unT9.jpeg",
     caption: "Me",
@@ -468,7 +478,52 @@ const PHOTOS = [
     src:     "https://i.imgur.com/eulMm3p.jpeg",
     caption: "Me",
     type:    "photo"
-  },
+  },     
+  {
+    src:     "https://i.imgur.com/ojd7pKm.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/ZZXlczu.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/EttMNIo.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/QHSwF1n.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/dQmmYxc.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/zWUE2T6.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/l3kr4tv.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/rGIhKT6.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/AFTDDi8.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
     src:     "https://res.cloudinary.com/deqjuasvw/video/upload/v1777374520/AllVideo_01772723176184_s01ucs.mp4",
