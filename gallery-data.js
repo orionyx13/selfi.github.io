@@ -543,12 +543,7 @@ const PHOTOS = [
     src:     "https://i.imgur.com/UHbfqrL.jpeg",
     caption: "Me",
     type:    "photo"
-  },        
-  {
-    src:     "https://i.imgur.com/UHbfqrL.jpeg",
-    caption: "Me",
-    type:    "photo"
-  },        
+  },               
   {
     src:     "https://i.imgur.com/7nZfici.jpeg",
     caption: "Me",
