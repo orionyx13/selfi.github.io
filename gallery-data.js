@@ -523,7 +523,62 @@ const PHOTOS = [
     src:     "https://i.imgur.com/AFTDDi8.jpeg",
     caption: "Me",
     type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/g9jTRDk.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/hoAXiSM.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/i5b58Xw.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/UHbfqrL.jpeg",
+    caption: "Me",
+    type:    "photo"
   },        
+  {
+    src:     "https://i.imgur.com/UHbfqrL.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/7nZfici.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/pcKUocW.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/Vd2WBJS.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },
+  {
+    src:     "https://i.imgur.com/hHrcVmT.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/ShAFdWt.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
+  {
+    src:     "https://i.imgur.com/GVaguW0.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
     src:     "https://res.cloudinary.com/deqjuasvw/video/upload/v1777374520/AllVideo_01772723176184_s01ucs.mp4",
