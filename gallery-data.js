@@ -573,6 +573,26 @@ const PHOTOS = [
     src:     "https://i.imgur.com/GVaguW0.jpeg",
     caption: "Me",
     type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/RsAHx5B.jpeg",
+    caption: "Me & Sisters",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/dltGS3x.jpeg",
+    caption: "Me & Sisters",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/dcajwu4.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/RCsiGlH.jpeg",
+    caption: "Me",
+    type:    "photo"
   },
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
@@ -597,6 +617,16 @@ const PHOTOS = [
   },        
   {
     src:     "https://res.cloudinary.com/deqjuasvw/video/upload/v1778388399/VID_20260508201955_uahhl0.mp4",
+    caption: "My Story",
+    type:    "video"
+  },       
+  {
+    src:     "https://res.cloudinary.com/deqjuasvw/video/upload/v1779176838/VID_20260519101841_ydo691.mp4",
+    caption: "My Story",
+    type:    "video"
+  },     
+  {
+    src:     "https://res.cloudinary.com/deqjuasvw/video/upload/v1779176838/VID_20260519102356_jwdkva.mp4",
     caption: "My Story",
     type:    "video"
   },
