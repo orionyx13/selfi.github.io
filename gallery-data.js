@@ -671,7 +671,7 @@ const PHOTOS = [
     type:    "video"
   },        
   {
-    src:     "https://res.cloudinary.com/deqjuasvw/image/upload/v1779341083/IMG_20260521_094855_odmprh.jpg",
+    src:     "https://res.cloudinary.com/deqjuasvw/video/upload/v1779342298/VID_20260520165119_u4sj4q.mp4",
     caption: "My Story",
     type:    "video"
   },
