@@ -653,6 +653,41 @@ const PHOTOS = [
     src:     "https://i.imgur.com/yRfllhN.jpeg",
     caption: "Me",
     type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/GSaBYW7.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/8SM529m.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/EoPU7Mp.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/wpjWds0.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/kMCdeVu.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },           
+  {
+    src:     "https://i.imgur.com/DnvKDVC.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },
+  {
+    src:     "https://i.imgur.com/V0LiqCG.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
   },
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
