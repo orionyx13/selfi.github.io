@@ -11,16 +11,8 @@
 </head>
 <body>
 
-  <nav id="navbar">
-    <div class="nav-logo">fiiselfii <span>✦</span></div>
-    <ul class="nav-links">
-      <li><a href="#hero" class="nav-active">Home</a></li>
-      <li><a href="#biodata">Biodata</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="music.html">Music</a></li>
-    </ul>
-    <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
-  </nav>
+  <!-- Navbar akan dimuat di sini -->
+  <div id="navbar-placeholder"></div>
 
   <section id="hero">
     <div class="hero-content">
@@ -156,22 +148,19 @@
     </div>
   </section>
 
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-name">Selfi Anggraeni</p>
-      <p class="footer-copy">Made with Noctyra · 2026</p>
-      <div class="footer-socials">
-        <a href="https://instagram.com/slfianggrea">Instagram</a><a href="https://tiktok.com/@selllllfiiiiii">TikTok</a><a href="https://wa.me/+6281249540088">WhatsApp</a>
-      </div>
-    </div>
-  </footer>
+  <!-- Footer akan dimuat di sini -->
+  <div id="footer-placeholder"></div>
 
   <script src="gallery-data.js"></script>
   <script src="music-data.js"></script>
   <script src="player.js"></script>
   <script src="script.js"></script>
   <script src="birthday.js"></script>
+  <script src="components/loader.js"></script>
   <script>
+    // Panggil loader setelah semua file lain dimuat
+    loadComponents();
+
     // Badge jumlah foto
     if(typeof PHOTOS !== 'undefined') {
       document.getElementById("heroBadgeNum").textContent = PHOTOS.length;
@@ -203,13 +192,6 @@
     if(typeof SONGS !== 'undefined' && typeof initPlayer !== 'undefined') {
       const limit = typeof MUSIC_PREVIEW_LIMIT !== 'undefined' ? MUSIC_PREVIEW_LIMIT : 10;
       initPlayer(SONGS.slice(0, limit));
-    }
-
-    // Nav burger
-    const burger = document.getElementById("navBurger");
-    const navLinks = document.querySelector(".nav-links");
-    if(burger && navLinks) {
-      burger.addEventListener("click", () => navLinks.classList.toggle("open"));
     }
   </script>
 </body>
