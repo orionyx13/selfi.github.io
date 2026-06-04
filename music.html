@@ -123,11 +123,6 @@
     .playlist-search::placeholder { color: rgba(255,255,255,0.3); }
     .playlist-search:focus { border-color: rgba(196,124,115,0.5); }
 
-    /* Active nav link */
-    .nav-links a.nav-active {
-      color: var(--rose-light) !important;
-    }
-
     @media (max-width: 1024px) {
       .music-full-inner { grid-template-columns: 1fr; }
       .player-sticky-wrap { position: static; max-width: 440px; }
@@ -143,28 +138,15 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav id="navbar" style="background:rgba(92,61,48,0.95);border-bottom-color:rgba(196,124,115,0.2);">
-    <div class="nav-logo" style="color:white">
-      <a href="index.html" style="color:inherit;text-decoration:none">fiiselfii <span style="color:var(--rose-light)">✦</span></a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html" style="color:rgba(255,255,255,0.6)">Home</a></li>
-      <li><a href="index.html#biodata" style="color:rgba(255,255,255,0.6)">Biodata</a></li>
-      <li><a href="gallery.html" style="color:rgba(255,255,255,0.6)">Gallery</a></li>
-      <li><a href="music.html" class="nav-active" style="color:var(--rose-light)">Music</a></li>
-    </ul>
-    <button class="nav-burger" id="navBurger" style="filter:invert(1)">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <!-- Navbar akan dimuat di sini -->
+  <div id="navbar-placeholder"></div>
 
   <!-- PAGE HERO -->
   <div class="music-page-hero">
     <div class="container">
       <p class="section-eyebrow">Now Playing</p>
-      <h1 class="section-title">Playing<em>Music</em></h1>
-      <p>Semua lagu favorit dalam Satu Tempat</p>
+      <h1 class="section-title">Playing <em>Music</em></h1>
+      <p>Semua lagu favorit dalam satu tempat</p>
     </div>
   </div>
 
@@ -237,23 +219,17 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer style="background:rgba(0,0,0,0.3);border-top:1px solid rgba(255,255,255,0.05)">
-    <div class="footer-inner">
-      <p class="footer-name" style="color:rgba(255,255,255,0.5)">Selfi Anggraeni</p>
-      <p class="footer-copy">Made with Noctyra · 2026</p>
-      <div class="footer-socials">
-        <a href="https://instagram.com/slfianggrea">Instagram</a>
-        <a href="https://tiktok.com/@selllllfiiiiii">TikTok</a>
-        <a href="https://wa.me/+6281249540088">WhatsApp</a>
-      </div>
-    </div>
-  </footer>
+  <!-- Footer akan dimuat di sini -->
+  <div id="footer-placeholder"></div>
 
   <script src="music-data.js"></script>
   <script src="player.js"></script>
   <script src="script.js"></script>
+  <script src="components/loader.js"></script>
   <script>
+    // Muat navbar dan footer
+    loadComponents();
+
     /* Init player dengan SEMUA lagu */
     if(typeof SONGS !== 'undefined' && typeof initPlayer !== 'undefined') {
       initPlayer(SONGS);
@@ -272,12 +248,8 @@
       });
     }
 
-    /* Nav Burger */
-    const burger = document.getElementById("navBurger");
-    const navLinks = document.querySelector(".nav-links");
-    if(burger && navLinks) {
-      burger.addEventListener("click", () => navLinks.classList.toggle("open"));
-    }
+    /* Nav Burger sudah ditangani oleh loader.js, tapi jika perlu tambahan */
+    // (tidak perlu karena loader.js sudah initBurger)
   </script>
 </body>
 </html>
