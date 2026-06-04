@@ -1,17 +1,23 @@
 // components/loader.js
 async function loadComponent(placeholderId, filePath) {
-  try {
-    const response = await fetch(filePath);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const html = await response.text();
-    document.getElementById(placeholderId).innerHTML = html;
-  } catch (error) {
-    console.error(`Error loading ${filePath}:`, error);
+  const res = await fetch(filePath);
+  const html = await res.text();
+  document.getElementById(placeholderId).innerHTML = html;
+}
+
+function setActiveNav() {
+  const path = window.location.pathname;
+  if (path.includes("gallery.html")) {
+    document.getElementById("nav-gallery")?.classList.add("nav-active");
+  } else if (path.includes("music.html")) {
+    document.getElementById("nav-music")?.classList.add("nav-active");
+  } else {
+    document.getElementById("nav-home")?.classList.add("nav-active");
+    document.getElementById("nav-biodata")?.classList.add("nav-active");
   }
 }
 
-// Setelah navbar dimuat, aktifkan tombol burger
-function initNavbarBurger() {
+function initBurger() {
   const burger = document.getElementById("navBurger");
   const navLinks = document.querySelector(".nav-links");
   if (burger && navLinks) {
@@ -20,9 +26,9 @@ function initNavbarBurger() {
   }
 }
 
-// Muat navbar dan footer, lalu inisialisasi burger
 async function loadComponents() {
   await loadComponent("navbar-placeholder", "components/navbar.html");
   await loadComponent("footer-placeholder", "components/footer.html");
-  initNavbarBurger();
+  setActiveNav();
+  initBurger();
 }
