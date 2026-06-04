@@ -10,19 +10,10 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     /* Sticky footer untuk gallery.html */
-    html, body {
-      min-height: 100vh;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-    .gallery-full-section {
-      flex: 1;
-    }
-    footer {
-      margin-top: auto;
-    }
+    html, body { min-height: 100vh; }
+    body { display: flex; flex-direction: column; }
+    .gallery-full-section { flex: 1; }
+    footer { margin-top: auto; }
 
     .page-hero {
       padding: calc(var(--nav-h) + 64px) 0 64px;
@@ -70,12 +61,7 @@
       border: none;
       pointer-events: none;
     }
-    .g-item:hover iframe {
-      pointer-events: auto;
-    }
-
-    .nav-links a.nav-active { color: var(--rose); }
-    .nav-links a.nav-active::after { width: 100%; }
+    .g-item:hover iframe { pointer-events: auto; }
 
     /* Lightbox */
     .lightbox {
@@ -103,16 +89,8 @@
 </head>
 <body>
 
-  <nav id="navbar">
-    <div class="nav-logo"><a href="index.html" style="color:inherit;text-decoration:none">fiiselfii <span>✦</span></a></div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#biodata">Biodata</a></li>
-      <li><a href="gallery.html" class="nav-active">Gallery</a></li>
-      <li><a href="music.html">Music</a></li>
-    </ul>
-    <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
-  </nav>
+  <!-- Navbar akan dimuat di sini -->
+  <div id="navbar-placeholder"></div>
 
   <div class="page-hero">
     <div class="container">
@@ -149,20 +127,16 @@
     </div>
   </div>
 
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-name">Selfi Anggraeni</p>
-      <p class="footer-copy">Made with Noctyra · 2026</p>
-      <div class="footer-socials">
-        <a href="https://instagram.com/slfianggrea">Instagram</a>
-        <a href="https://tiktok.com/@selllllfiiiiii">TikTok</a>
-        <a href="https://wa.me/+6281249540088">WhatsApp</a>
-      </div>
-    </div>
-  </footer>
+  <!-- Footer akan dimuat di sini -->
+  <div id="footer-placeholder"></div>
 
   <script src="gallery-data.js"></script>
+  <script src="components/loader.js"></script>
   <script>
+    // Panggil loader untuk memuat navbar & footer
+    loadComponents();
+
+    // ========== KODE GALERIA SISANYA (SAMA PERSIS DENGAN YANG LAMA) ==========
     const galleryFull = document.getElementById("galleryFull");
     const galleryCount = document.getElementById("galleryCount");
     let semuaItem = typeof PHOTOS !== 'undefined' ? [...PHOTOS] : [];
@@ -212,7 +186,6 @@
       buildGallery(filteredItems);
     }
 
-    // Filter buttons
     document.querySelectorAll(".filter-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
@@ -222,7 +195,6 @@
       });
     });
 
-    // Lightbox functions
     function openLightbox(idx, items) {
       lightboxIdx = idx;
       const lb = document.getElementById("lightbox");
@@ -234,9 +206,7 @@
       const item = items[lightboxIdx];
       const mediaContainer = document.getElementById("lightboxMedia");
       const capEl = document.getElementById("lightboxCaption");
-      
       if (!mediaContainer) return;
-      
       if (item.type === "video") {
         mediaContainer.innerHTML = `<iframe class="lightbox-video" src="${item.src}" frameborder="0" allowfullscreen></iframe>`;
       } else {
@@ -284,12 +254,6 @@
     } else {
       if (galleryCount) galleryCount.textContent = "0 item";
       if (galleryFull) galleryFull.innerHTML = "<p style='text-align:center; color:var(--text-muted); padding:60px;'>Belum ada konten. Tambahkan data di gallery-data.js</p>";
-    }
-
-    const burger = document.getElementById("navBurger");
-    const navLinks = document.querySelector(".nav-links");
-    if (burger && navLinks) {
-      burger.addEventListener("click", () => navLinks.classList.toggle("open"));
     }
   </script>
 </body>
