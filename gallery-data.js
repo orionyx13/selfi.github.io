@@ -800,12 +800,12 @@ const PHOTOS = [
     type:    "photo"
   },       
   {
-    src:     "https://i.imgur.com/0YGY7Lu.jpeg",
+    src:     "https://i.imgur.com/kash2jf.jpeg",
     caption: "Me",
     type:    "photo"
   },      
   {
-    src:     "https://i.imgur.com/GTllO7C.jpeg",
+    src:     "https://i.imgur.com/Vey3bHc.jpeg",
     caption: "Me",
     type:    "photo"
   },
