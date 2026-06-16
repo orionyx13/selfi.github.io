@@ -798,6 +798,16 @@ const PHOTOS = [
     src:     "https://i.imgur.com/LLp1tvf.jpeg",
     caption: "Me",
     type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/0YGY7Lu.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },      
+  {
+    src:     "https://i.imgur.com/GTllO7C.jpeg",
+    caption: "Me",
+    type:    "photo"
   },
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
