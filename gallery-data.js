@@ -866,12 +866,22 @@ const PHOTOS = [
   },      
   {
     src:     "https://i.imgur.com/6Hg2AMg.jpeg",
-    caption: "Me",
+    caption: "Me & Moms",
     type:    "photo"
   },       
   {
     src:     "https://i.imgur.com/gKwhG8W.jpeg",
-    caption: "Me",
+    caption: "Me & Friend",
+    type:    "photo"
+  },        
+  {
+    src:     "https://i.imgur.com/BY3Pj6b.jpeg",
+    caption: "Me & Moms",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/k1vrR8n.jpeg",
+    caption: "Me & Moms",
     type:    "photo"
   },
   // VIDEO — Contoh (ganti dengan link video kamu)
