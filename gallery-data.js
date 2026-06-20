@@ -883,6 +883,76 @@ const PHOTOS = [
     src:     "https://i.imgur.com/k1vrR8n.jpeg",
     caption: "Me & Moms",
     type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/J3ZyD37.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },         
+  {
+    src:     "https://i.imgur.com/15bGl4S.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/oSuxh8I.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/4Dd8LSD.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/vNlvzg2.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/kI5bQF9.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/QZUewzL.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/0F50Bnj.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/15PuOZ4.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/w8HmUml.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/FrXuxQ7.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/ONuD8ga.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/HjzCBQT.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
+  },       
+  {
+    src:     "https://i.imgur.com/cEfrUGy.jpeg",
+    caption: "Me & Friend",
+    type:    "photo"
   },
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
