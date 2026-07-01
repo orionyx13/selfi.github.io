@@ -1060,10 +1060,15 @@ const PHOTOS = [
     type:    "photo"
   },     
   {
-    src:     "https://i.imgur.com/yBgtjPt.jpeg",
+    src:     "https://i.imgur.com/E9HGATr.jpeg",
     caption: "Me",
     type:    "photo"
   },
+  {
+    src:     "https://i.imgur.com/yBgtjPt.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
     src:     "https://res.cloudinary.com/deqjuasvw/video/upload/v1777374520/AllVideo_01772723176184_s01ucs.mp4",
