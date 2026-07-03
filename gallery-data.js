@@ -1069,6 +1069,11 @@ const PHOTOS = [
     caption: "Me",
     type:    "photo"
   },     
+  {
+    src:     "https://i.imgur.com/lDV3DXx.jpeg",
+    caption: "Me",
+    type:    "photo"
+  },     
   // VIDEO — Contoh (ganti dengan link video kamu)
   {
     src:     "https://res.cloudinary.com/deqjuasvw/video/upload/v1777374520/AllVideo_01772723176184_s01ucs.mp4",
